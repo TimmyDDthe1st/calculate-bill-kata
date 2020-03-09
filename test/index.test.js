@@ -51,3 +51,11 @@ test('if tip is not a number returns an error string', () => {
 
     expect(calculateBill(price, vat, null)).toBe(errorMessage);
 })
+
+test('if 2.20 is entered returns correct calculation', () => {
+    const price = 2.20;
+    const vat = 0.20
+    const tip = 0.00;
+
+    expect(calculateBill(price, vat, tip)).toBe('£2.40');
+})
