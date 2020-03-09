@@ -1,13 +1,9 @@
 function calculateBill(price, vat, tip) {
-    let propertyIsInteger;
-
-    if (!Number.isInteger(price) && !Number.isInteger(vat) && !Number.isInteger(tip) || vat === undefined || tip === null) {
-        propertyIsInteger = false;
+    if (Number.isInteger(price) && Number.isInteger(vat) && Number.isInteger(tip)) {
+        return `£${price + vat + tip}`;
     } else {
-        propertyIsInteger = true;
+        return "error";
     }
-
-    return propertyIsInteger ? `£${price + vat + tip}` : "error";
 }
 
 module.exports = calculateBill;
